@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ANIYAN</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#ff7a00">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
+
+    <div class="bg-glow"></div>
+
+    <!-- =========================
+         HOME SCREEN
+    ========================== -->
+
+    <section
+        id="homeScreen"
+        class="screen active-screen"
+    >
+
+        <div class="hero">
+
+            <h1 class="logo">
+                ANIYAN
+            </h1>
+
+            <p class="tagline">
+                Sharpen Your Mind
+            </p>
+
+        </div>
+
+        <!-- STATS -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <h2 id="highestLevel">
+                    1
+                </h2>
+
+                <p>
+                    Highest Level
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2 id="currentStreak">
+                    0
+                </h2>
+
+                <p>
+                    Streak
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2 id="totalAttempts">
+                    0
+                </h2>
+
+                <p>
+                    Attempts
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- MODES -->
+
+        <div class="mode-wrapper">
+
+            <button
+                id="gkModeBtn"
+                class="mode-card"
+            >
+
+                <div class="mode-icon">
+                    🌍
+                </div>
+
+                <h2>
+                    GK Mode
+                </h2>
+
+                <p>
+                    General Knowledge
+                </p>
+
+            </button>
+
+            <button
+                id="reasoningModeBtn"
+                class="mode-card"
+            >
+
+                <div class="mode-icon">
+                    🧠
+                </div>
+
+                <h2>
+                    Reasoning Mode
+                </h2>
+
+                <p>
+                    Logic & Brain Training
+                </p>
+
+            </button>
+
+        </div>
+
+        <!-- ACTIONS -->
+
+        <div class="action-area">
+
+            <button
+                id="resetBtn"
+                class="danger-btn"
+            >
+                Reset Progress
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         GK SCREEN
+    ========================== -->
+
+    <section
+        id="gkScreen"
+        class="screen hidden"
+    >
+
+        <div class="top-bar">
+
+            <button
+                class="back-btn"
+            >
+                ←
+            </button>
+
+            <h2>
+                GK MODE
+            </h2>
+
+        </div>
+
+        <div class="mode-info-card">
+
+            <h3>
+                Current Level
+            </h3>
+
+            <h1 id="gkCurrentLevel">
+                1
+            </h1>
+
+            <button
+                id="startGK"
+                class="play-btn"
+            >
+                Continue
+            </button>
+
+        </div>
+
+        <!-- LEVEL GRID -->
+
+        <div class="levels-section">
+
+            <h3>
+                Levels
+            </h3>
+
+            <div
+                id="gkLevelGrid"
+                class="level-grid"
+            >
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         REASONING SCREEN
+    ========================== -->
+
+    <section
+        id="reasoningScreen"
+        class="screen hidden"
+    >
+
+        <div class="top-bar">
+
+            <button
+                class="back-btn"
+            >
+                ←
+            </button>
+
+            <h2>
+                REASONING MODE
+            </h2>
+
+        </div>
+
+        <div class="mode-info-card">
+
+            <h3>
+                Current Level
+            </h3>
+
+            <h1 id="reasoningCurrentLevel">
+                1
+            </h1>
+
+            <button
+                id="startReasoning"
+                class="play-btn"
+            >
+                Continue
+            </button>
+
+        </div>
+
+        <div class="levels-section">
+
+            <h3>
+                Levels
+            </h3>
+
+            <div
+                id="reasoningLevelGrid"
+                class="level-grid"
+            >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+        <!-- =========================
+         QUESTION SCREEN
+    ========================== -->
+
+    <section
+        id="questionScreen"
+        class="screen hidden"
+    >
+
+        <!-- TOP INFO -->
+
+        <div class="question-top">
+
+            <h2 id="levelTitle">
+                Level 1
+            </h2>
+
+            <div
+                id="checkpointInfo"
+                class="checkpoint-badge"
+            >
+                Checkpoint: 1
+            </div>
+
+        </div>
+
+        <!-- PROGRESS -->
+
+        <div class="progress-section">
+
+            <div class="progress-header">
+
+                <span
+                    id="questionCounter"
+                >
+                    Question 1 / 5
+                </span>
+
+                <span
+                    id="progressPercent"
+                >
+                    20%
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div
+                    id="progressFill"
+                    class="progress-fill"
+                >
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- QUESTION -->
+
+        <div class="question-card">
+
+            <h2
+                id="questionText"
+            >
+                Question appears here...
+            </h2>
+
+        </div>
+
+        <!-- OPTIONS -->
+
+        <div
+            class="options-container"
+        >
+
+            <button
+                class="option-btn"
+            >
+                Option A
+            </button>
+
+            <button
+                class="option-btn"
+            >
+                Option B
+            </button>
+
+            <button
+                class="option-btn"
+            >
+                Option C
+            </button>
+
+            <button
+                class="option-btn"
+            >
+                Option D
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         LEVEL COMPLETE MODAL
+    ========================== -->
+
+    <div
+        id="successModal"
+        class="modal hidden"
+    >
+
+        <div
+            class="modal-content success"
+        >
+
+            <div class="modal-icon">
+                🎉
+            </div>
+
+            <h2>
+                Level Complete
+            </h2>
+
+            <p
+                id="successMessage"
+            >
+                Next Level Unlocked
+            </p>
+
+            <button
+                id="nextLevelBtn"
+                class="modal-btn success-btn"
+            >
+                Continue
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         FAILURE MODAL
+    ========================== -->
+
+    <div
+        id="failureModal"
+        class="modal hidden"
+    >
+
+        <div
+            class="modal-content failure"
+        >
+
+            <div class="modal-icon">
+                ❌
+            </div>
+
+            <h2>
+                Wrong Answer
+            </h2>
+
+            <p
+                id="failureMessage"
+            >
+                Returning To Checkpoint
+            </p>
+
+            <button
+                id="retryBtn"
+                class="modal-btn failure-btn"
+            >
+                Continue
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         GAME COMPLETED MODAL
+    ========================== -->
+
+    <div
+        id="gameCompleteModal"
+        class="modal hidden"
+    >
+
+        <div
+            class="modal-content victory"
+        >
+
+            <div class="modal-icon">
+                🏆
+            </div>
+
+            <h2>
+                Mode Completed
+            </h2>
+
+            <p>
+                You finished all 50 levels.
+            </p>
+
+            <button
+                id="victoryBtn"
+                class="modal-btn"
+            >
+                Back To Home
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         ACHIEVEMENT MODAL
+    ========================== -->
+
+    <div
+        id="achievementModal"
+        class="modal hidden"
+    >
+
+        <div
+            class="modal-content achievement"
+        >
+
+            <div class="modal-icon">
+                ⭐
+            </div>
+
+            <h2
+                id="achievementTitle"
+            >
+                Achievement Unlocked
+            </h2>
+
+            <p
+                id="achievementText"
+            >
+                New Achievement Earned
+            </p>
+
+            <button
+                id="achievementBtn"
+                class="modal-btn"
+            >
+                Awesome
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         SCRIPTS
+    ========================== -->
+
+    <script src="gk.js"></script>
+
+    <script src="reasoning.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
